@@ -1,0 +1,110 @@
+.customer-layout {
+  height: 100vh;
+  background: #f5f7fb;
+}
+
+.top-navbar {
+  height: 60px;
+  background: #1f2937;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  color: white;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.nav-item {
+  margin-right: 20px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.nav-item.active {
+  border-bottom: 2px solid #38bdf8;
+  opacity: 1;
+}
+
+.nav-right {
+  position: relative;
+}
+
+/* Profile Circle */
+.profile-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #38bdf8; /* cyan */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.profile-circle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Dropdown */
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: white;
+  padding: 12px;
+  width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.welcome-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.dropdown-btn {
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  color:white ;
+  background: #ff9f00;
+  transition: background 0.2s;
+}
+
+.dropdown-btn:hover {
+  background: #ca7e05;
+}
+
+.logout {
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  background: #ef4444;
+  color: white;
+}
+
+.logout:hover {
+  background: #dc2626;
+}

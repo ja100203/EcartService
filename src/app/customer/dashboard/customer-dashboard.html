@@ -1,0 +1,50 @@
+<div class="customer-layout">
+  <!-- TOP NAVBAR -->
+  <header class="top-navbar">
+    <div class="nav-left">
+      <span class="logo">E-Cart</span>
+
+      <span
+        class="nav-item"
+        [class.active]="activeSection === 'home'"
+        (click)="activeSection = 'home'"
+        >Home</span
+      >
+
+      <span
+        class="nav-item"
+        [class.active]="activeSection === 'cart'"
+        (click)="activeSection = 'cart'"
+        >My Cart</span
+      >
+
+      <span
+        class="nav-item"
+        [class.active]="activeSection === 'orders'"
+        (click)="activeSection = 'orders'"
+        >My Orders</span
+      >
+    </div>
+
+    <!-- PROFILE -->
+    <div class="nav-right">
+      <div class="profile-circle" (click)="toggleProfile()">
+        {{ getUserInitials() }}
+      </div>
+
+      <div class="profile-dropdown" *ngIf="showProfileMenu">
+        <p class="welcome-text">Welcome {{ customerName }}</p>
+        <button class="dropdown-btn" (click)="activeSection = 'profile'">Profile</button>
+        <button class="logout" (click)="logout()">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- OVERLAY SECTION -->
+  <main class="section-container">
+    <app-home *ngIf="activeSection === 'home'"></app-home>
+    <app-cart *ngIf="activeSection === 'cart'"></app-cart>
+    <app-orders *ngIf="activeSection === 'orders'"></app-orders>
+    <app-profile *ngIf="activeSection === 'profile'"></app-profile>
+  </main>
+</div>

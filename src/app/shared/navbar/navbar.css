@@ -1,0 +1,32 @@
+.navbar {
+  height: 64px;
+  background: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  color: var(--white);
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu li {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.menu li:hover {
+  color: var(--gold);
+}
+
+.logout {
+  background: transparent;
+  border: 1px solid var(--white);
+  color: var(--white);
+  padding: 6px 12px;
+  cursor: pointer;
+}

@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-blue: linear-gradient(135deg, #4facfe, #00f2fe);
+  --black: #0f172a;
+  --white: #ffffff;
+  --gold: #d4af37;
+  --grey: #e5e7eb;
+}

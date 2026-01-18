@@ -1,0 +1,51 @@
+<div class="register-container">
+  <h2>Customer Registration</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <input type="text" placeholder="Name"
+      formControlName="name">
+
+    <select formControlName="country">
+      <option value="">Select Country</option>
+      <option *ngFor="let c of countries">{{c}}</option>
+    </select>
+
+    <select formControlName="state">
+      <option value="">Select State</option>
+      <option *ngFor="let s of states">{{s}}</option>
+    </select>
+
+    <input type="text" placeholder="City"
+      formControlName="city">
+
+    <textarea placeholder="Address 1"
+      formControlName="address1"></textarea>
+
+    <textarea placeholder="Address 2 (Optional)"
+      formControlName="address2"></textarea>
+
+    <select formControlName="zip">
+      <option value="">Select Zip Code</option>
+      <option *ngFor="let z of zipCodes">{{z}}</option>
+    </select>
+
+    <input type="text" placeholder="Phone Number"
+      formControlName="phone">
+
+    <input type="email" placeholder="Email"
+      formControlName="email">
+
+    <input type="password" placeholder="Password"
+      formControlName="password">
+
+    <input type="password" placeholder="Confirm Password"
+      formControlName="confirmPassword">
+
+    <button type="submit">Register</button>
+
+    <p class="success" *ngIf="successMessage">{{successMessage}}</p>
+    <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+
+  </form>
+</div>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Cart Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ----------------- BASE ----------------- */
+ 
+  </style>
+</head>
+<body>
+  <div class="home-page">
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Big Shopping Days</h1>
+        <p>Best deals on Electronics, Fashion & More</p>
+        <button class="primary-btn">Shop Now</button>
+      </div>
+    </section>
+
+    <!-- CATEGORY STRIP -->
+    <section class="categories">
+      <div class="category" *ngFor="let c of categories">
+        <img [src]="c.image" />
+        <span>{{ c.name }}</span>
+      </div>
+    </section>
+
+    <!-- SEARCH & FILTER -->
+    <section class="toolbar">
+      <input placeholder="Search products..." [(ngModel)]="searchText" />
+      <select [(ngModel)]="selectedCategory">
+        <option value="">All Categories</option>
+        <option *ngFor="let c of categories">{{ c.name }}</option>
+      </select>
+    </section>
+
+    <!-- DEALS OF THE DAY -->
+    <section class="section">
+      <h2>Deals of the Day</h2>
+      <div class="product-row">
+        <div class="product-card" *ngFor="let p of products.slice(0,3)">
+          <div class="ribbon">HOT</div>
+          <img [src]="p.image" alt="{{p.name}}">
+          <div class="product-info">
+            <h3>{{p.name}}</h3>
+            <p>{{p.description}}</p>
+            <div class="price">₹{{p.price}}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOMMENDED FOR YOU -->
+    <section class="section">
+      <h2>Recommended For You</h2>
+      <div class="product-grid">
+        <div class="product-card" *ngFor="let p of products">
+          <img [src]="p.image" alt="{{p.name}}">
+          <div class="product-info">
+            <h3>{{p.name}}</h3>
+            <p>{{p.description}}</p>
+            <div class="price">₹{{p.price}}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
