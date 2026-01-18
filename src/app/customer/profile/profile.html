@@ -1,6 +1,45 @@
-<div class="section">
-  <h2>My Profile</h2>
-  <p>Name: {{user.name}}</p>
-  <p>Email: {{user.email}}</p>
-  <button class="primary-btn">Edit Profile</button>
+<div class="profile-container">
+
+  <!-- Header -->
+  <div class="profile-header">
+    <img [src]="user.avatar" alt="Profile Picture" class="profile-avatar">
+    <div class="profile-info">
+      <h2>{{ user.name }}</h2>
+      <p>{{ user.email }}</p>
+      <p>{{ user.phone }}</p>
+      <button class="edit-btn">Edit Profile</button>
+    </div>
+  </div>
+
+  <!-- Addresses -->
+  <div class="profile-section">
+    <h3>Saved Addresses</h3>
+    <ul>
+      <li *ngFor="let addr of addresses">
+        <strong>{{ addr.label }}:</strong> {{ addr.detail }}
+        <button class="small-btn">Edit</button>
+      </li>
+    </ul>
+    <button class="add-btn">Add New Address</button>
+  </div>
+
+  <!-- Payment Methods -->
+  <div class="profile-section">
+    <h3>Payment Methods</h3>
+    <ul>
+      <li *ngFor="let pay of paymentMethods">
+        <strong>{{ pay.type }}:</strong> {{ pay.detail }}
+        <button class="small-btn">Edit</button>
+      </li>
+    </ul>
+    <button class="add-btn">Add Payment Method</button>
+  </div>
+
+  <!-- Security Settings -->
+  <div class="profile-section">
+    <h3>Security Settings</h3>
+    <button class="small-btn">Change Password</button>
+    <button class="small-btn">Two-Factor Authentication</button>
+  </div>
+
 </div>
