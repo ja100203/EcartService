@@ -1,0 +1,13 @@
+<h2>Feedback</h2>
+
+<table>
+  <tr>
+    <th>Order ID</th><th>Customer</th><th>Rating</th><th>Comment</th>
+  </tr>
+  <tr *ngFor="let f of feedbacks">
+    <td>{{f.orderId}}</td>
+    <td>{{f.customer}}</td>
+    <td>{{f.rating}}</td>
+    <td>{{f.comment}}</td>
+  </tr>
+</table>

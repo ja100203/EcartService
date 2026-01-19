@@ -1,0 +1,36 @@
+<h2>Admin Dashboard</h2>
+
+<div class="cards">
+  <div class="card">
+    <h3>Total Orders</h3>
+    <p>{{totalOrders}}</p>
+  </div>
+
+  <div class="card">
+    <h3>Total Revenue</h3>
+    <p>₹{{totalRevenue}}</p>
+  </div>
+
+  <div class="card">
+    <h3>Delivered Orders</h3>
+    <p>{{deliveredOrders}}</p>
+  </div>
+
+  <div class="card">
+    <h3>Cancelled Orders</h3>
+    <p>{{cancelledOrders}}</p>
+  </div>
+</div>
+
+<h3>Monthly Sales</h3>
+
+<table>
+  <tr>
+    <th>Month</th>
+    <th>Revenue</th>
+  </tr>
+  <tr *ngFor="let m of months">
+    <td>{{m}}</td>
+    <td>₹{{monthlySales[m]}}</td>
+  </tr>
+</table>

@@ -1,0 +1,27 @@
+<h2>View Products</h2>
+
+<div class="actions">
+  <button (click)="exportExcel()">Download XLS</button>
+  <button (click)="exportPDF()">Download PDF</button>
+</div>
+
+<table>
+  <tr>
+    <th>ID</th><th>Name</th><th>Price</th><th>Category</th><th>Qty</th><th>Status</th>
+  </tr>
+  <tr *ngFor="let p of paginatedProducts">
+    <td>{{p.id}}</td>
+    <td>{{p.name}}</td>
+    <td>{{p.price}}</td>
+    <td>{{p.category}}</td>
+    <td>{{p.qty}}</td>
+    <td>{{p.status}}</td>
+  </tr>
+</table>
+
+<app-pagination
+  [totalItems]="allProducts.length"
+  [itemsPerPage]="itemsPerPage"
+  [currentPage]="currentPage"
+  (pageChange)="onPageChange($event)">
+</app-pagination>

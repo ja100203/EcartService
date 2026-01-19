@@ -1,0 +1,46 @@
+<h2>Bulk Product Upload</h2>
+
+<input type="file" accept=".xlsx,.csv" (change)="onFileChange($event)" />
+
+<div *ngIf="uploadedProducts.length">
+
+  <h3>Preview</h3>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th>Qty</th>
+      <th>Status</th>
+      <th>Result</th>
+    </tr>
+
+    <tr *ngFor="let p of uploadedProducts"
+        [class.invalid]="!isValid(p)">
+      <td>{{p.id}}</td>
+      <td>{{p.name}}</td>
+      <td>{{p.price}}</td>
+      <td>{{p.category}}</td>
+      <td>{{p.qty}}</td>
+      <td>{{p.status}}</td>
+      <td>
+        <span *ngIf="isValid(p)" class="ok">Valid</span>
+        <span *ngIf="!isValid(p)" class="error">Invalid</span>
+      </td>
+    </tr>
+  </table>
+
+  <div class="summary">
+    <p>Valid Records: {{validProducts.length}}</p>
+    <p>Invalid Records: {{invalidProducts.length}}</p>
+  </div>
+
+  <button
+    [disabled]="validProducts.length === 0"
+    (click)="saveProducts()">
+    Save Valid Products
+  </button>
+
+</div>

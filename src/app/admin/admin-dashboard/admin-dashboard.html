@@ -1,0 +1,28 @@
+<div class="layout">
+  <!-- TOP NAVBAR -->
+  <header class="navbar">
+    <div class="logo">E-Cart Admin</div>
+
+    <nav>
+      <button (click)="switchSection('home')">Home</button>
+      <button (click)="switchSection('products')">Products</button>
+      <button (click)="switchSection('customers')">Customers</button>
+      <button (click)="switchSection('orders')">Orders</button>
+      <button (click)="switchSection('feedback')">Feedback</button>
+    </nav>
+
+    <div class="profile">
+      <span>Welcome Admin</span>
+      <button class="logout" (click)="logout()">Logout</button>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="content">
+    <app-dashboard *ngIf="activeSection==='home'"></app-dashboard>
+    <app-products *ngIf="activeSection==='products'"></app-products>
+    <app-customers *ngIf="activeSection==='customers'"></app-customers>
+    <app-orders *ngIf="activeSection==='orders'"></app-orders>
+    <app-feedback *ngIf="activeSection==='feedback'"></app-feedback>
+  </main>
+</div>

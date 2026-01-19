@@ -1,0 +1,45 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #e5e7eb;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background: #020617;
+  color: white;
+}
+
+select {
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.cancel-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.cancel-btn:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+.cancelled {
+  color: red;
+  font-weight: bold;
+}
+
+.delivered {
+  color: green;
+  font-weight: bold;
+}
